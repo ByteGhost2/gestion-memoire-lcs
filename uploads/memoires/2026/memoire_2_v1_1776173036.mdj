@@ -1,0 +1,3441 @@
+{
+  "_type": "Project",
+  "_id": "_36BA27AF141744D1",
+  "name": "e-Mémoire LCS – IUCS/LCS",
+  "ownedElements": [
+    {
+      "_type": "UMLModel",
+      "_id": "_29ECE5A01C60460C",
+      "name": "Plateforme e-Mémoire LCS",
+      "ownedElements": [
+        {
+          "_type": "UMLActor",
+          "_id": "_C0D5CE6862374AC0",
+          "name": "Étudiant",
+          "_parent": {
+            "$ref": "_29ECE5A01C60460C"
+          }
+        },
+        {
+          "_type": "UMLActor",
+          "_id": "_7CD57357C1A74230",
+          "name": "Encadreur",
+          "_parent": {
+            "$ref": "_29ECE5A01C60460C"
+          }
+        },
+        {
+          "_type": "UMLActor",
+          "_id": "_C1DF5B7DF0954592",
+          "name": "Jury",
+          "_parent": {
+            "$ref": "_29ECE5A01C60460C"
+          }
+        },
+        {
+          "_type": "UMLActor",
+          "_id": "_29464699F40D4D78",
+          "name": "Responsable Pédagogique",
+          "_parent": {
+            "$ref": "_29ECE5A01C60460C"
+          }
+        },
+        {
+          "_type": "UMLActor",
+          "_id": "_F0A50C2BC6794EB5",
+          "name": "Administrateur",
+          "_parent": {
+            "$ref": "_29ECE5A01C60460C"
+          }
+        },
+        {
+          "_type": "UMLUseCaseDiagram",
+          "_id": "_26CCFB9520564CC5",
+          "name": "Diagramme de Cas d'Utilisation – e-Mémoire LCS",
+          "ownedViews": [
+            {
+              "_type": "UMLSystemBoundaryView",
+              "_id": "_4555487EF402492C",
+              "name": "<<system>>\ne-Mémoire LCS",
+              "x": 170,
+              "y": 40,
+              "width": 680,
+              "height": 780
+            },
+            {
+              "_type": "UMLActorView",
+              "_id": "_C0D5CE6862374AC0",
+              "name": "Étudiant",
+              "x": 30,
+              "y": 230,
+              "width": 60,
+              "height": 80
+            },
+            {
+              "_type": "UMLActorView",
+              "_id": "_7CD57357C1A74230",
+              "name": "Encadreur",
+              "x": 30,
+              "y": 400,
+              "width": 60,
+              "height": 80
+            },
+            {
+              "_type": "UMLActorView",
+              "_id": "_C1DF5B7DF0954592",
+              "name": "Jury",
+              "x": 30,
+              "y": 570,
+              "width": 60,
+              "height": 80
+            },
+            {
+              "_type": "UMLActorView",
+              "_id": "_29464699F40D4D78",
+              "name": "Responsable\nPéd.",
+              "x": 910,
+              "y": 300,
+              "width": 60,
+              "height": 80
+            },
+            {
+              "_type": "UMLActorView",
+              "_id": "_F0A50C2BC6794EB5",
+              "name": "Administrateur",
+              "x": 910,
+              "y": 520,
+              "width": 60,
+              "height": 80
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_5E64E2BEA74B45DE",
+              "name": "S'authentifier",
+              "x": 200,
+              "y": 60,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_9BDB4CB1AA244CB4",
+              "name": "S'inscrire (matricule)",
+              "x": 200,
+              "y": 120,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_C331B6A4CF0949B2",
+              "name": "Modifier son profil",
+              "x": 200,
+              "y": 180,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_E2AA5C970FCC4037",
+              "name": "Soumettre un thème",
+              "x": 420,
+              "y": 60,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_FDFBCC14F0BE4860",
+              "name": "Déposer une version",
+              "x": 420,
+              "y": 120,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_917DF186B25A4CBB",
+              "name": "Chat encadreur-étudiant",
+              "x": 420,
+              "y": 180,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_F9B3ADC2581D476E",
+              "name": "Valider / rejeter thème",
+              "x": 420,
+              "y": 250,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_C129F2670E2F40C6",
+              "name": "Valider version finale",
+              "x": 420,
+              "y": 310,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_119292916CB14ECD",
+              "name": "Vérifier plagiat",
+              "x": 420,
+              "y": 370,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_E249C024CE894F5E",
+              "name": "Planifier soutenance",
+              "x": 420,
+              "y": 440,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_6B07334B66F54992",
+              "name": "Gérer les jurys",
+              "x": 420,
+              "y": 500,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_74D2A69C64044837",
+              "name": "Évaluer soutenance",
+              "x": 420,
+              "y": 560,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_C6FE5510589341E8",
+              "name": "Finaliser soutenance",
+              "x": 420,
+              "y": 620,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_F18C7EC8F1AA49C7",
+              "name": "Déclarer indisponibilité",
+              "x": 420,
+              "y": 680,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_18D2858E79874518",
+              "name": "Téléverser attestation",
+              "x": 650,
+              "y": 200,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_BC7303FF441747B8",
+              "name": "Bibliothèque numérique",
+              "x": 650,
+              "y": 270,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_C8FAF9CC190249ED",
+              "name": "Gérer utilisateurs",
+              "x": 650,
+              "y": 340,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_23057740A6C34EA4",
+              "name": "Consulter logs",
+              "x": 650,
+              "y": 410,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_F9FD033DAA1E4CA6",
+              "name": "Exporter données",
+              "x": 650,
+              "y": 480,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "_8E31D343ACB94006",
+              "name": "Recevoir notifications",
+              "x": 650,
+              "y": 550,
+              "width": 170,
+              "height": 45
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_07C02AC586C5474F",
+              "source": {
+                "$ref": "_C0D5CE6862374AC0"
+              },
+              "target": {
+                "$ref": "_E2AA5C970FCC4037"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_1BD73D6A80E441CC",
+              "source": {
+                "$ref": "_C0D5CE6862374AC0"
+              },
+              "target": {
+                "$ref": "_FDFBCC14F0BE4860"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_157F45461F4B4B37",
+              "source": {
+                "$ref": "_C0D5CE6862374AC0"
+              },
+              "target": {
+                "$ref": "_917DF186B25A4CBB"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_F084CEF1878F40E8",
+              "source": {
+                "$ref": "_C0D5CE6862374AC0"
+              },
+              "target": {
+                "$ref": "_BC7303FF441747B8"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_6B4C5402AF6F4B54",
+              "source": {
+                "$ref": "_C0D5CE6862374AC0"
+              },
+              "target": {
+                "$ref": "_8E31D343ACB94006"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_D6FA16A631B34338",
+              "source": {
+                "$ref": "_7CD57357C1A74230"
+              },
+              "target": {
+                "$ref": "_F9B3ADC2581D476E"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_879E801657384C75",
+              "source": {
+                "$ref": "_7CD57357C1A74230"
+              },
+              "target": {
+                "$ref": "_C129F2670E2F40C6"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_5A4000C8E77241DF",
+              "source": {
+                "$ref": "_7CD57357C1A74230"
+              },
+              "target": {
+                "$ref": "_917DF186B25A4CBB"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_1352839DFF7A4614",
+              "source": {
+                "$ref": "_7CD57357C1A74230"
+              },
+              "target": {
+                "$ref": "_119292916CB14ECD"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_38BDAE31DDA04DCC",
+              "source": {
+                "$ref": "_7CD57357C1A74230"
+              },
+              "target": {
+                "$ref": "_F18C7EC8F1AA49C7"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_27DC0295247B4F32",
+              "source": {
+                "$ref": "_7CD57357C1A74230"
+              },
+              "target": {
+                "$ref": "_8E31D343ACB94006"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_54A2C69AC8944EA1",
+              "source": {
+                "$ref": "_C1DF5B7DF0954592"
+              },
+              "target": {
+                "$ref": "_74D2A69C64044837"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_BBB33F4393C342EB",
+              "source": {
+                "$ref": "_C1DF5B7DF0954592"
+              },
+              "target": {
+                "$ref": "_C6FE5510589341E8"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_033B8554712543BE",
+              "source": {
+                "$ref": "_C1DF5B7DF0954592"
+              },
+              "target": {
+                "$ref": "_F18C7EC8F1AA49C7"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_ECFE11C57A404030",
+              "source": {
+                "$ref": "_C1DF5B7DF0954592"
+              },
+              "target": {
+                "$ref": "_8E31D343ACB94006"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_CFABF8C7CE98447E",
+              "source": {
+                "$ref": "_29464699F40D4D78"
+              },
+              "target": {
+                "$ref": "_F9B3ADC2581D476E"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_B49F04610FA14323",
+              "source": {
+                "$ref": "_29464699F40D4D78"
+              },
+              "target": {
+                "$ref": "_E249C024CE894F5E"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_782E5C3C63E641AA",
+              "source": {
+                "$ref": "_29464699F40D4D78"
+              },
+              "target": {
+                "$ref": "_6B07334B66F54992"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_6143EB3C8AA743A9",
+              "source": {
+                "$ref": "_29464699F40D4D78"
+              },
+              "target": {
+                "$ref": "_8E31D343ACB94006"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_1A02D11DB7B04A3C",
+              "source": {
+                "$ref": "_F0A50C2BC6794EB5"
+              },
+              "target": {
+                "$ref": "_18D2858E79874518"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_D0046C47EBF549F9",
+              "source": {
+                "$ref": "_F0A50C2BC6794EB5"
+              },
+              "target": {
+                "$ref": "_C8FAF9CC190249ED"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_4901549DA56743C9",
+              "source": {
+                "$ref": "_F0A50C2BC6794EB5"
+              },
+              "target": {
+                "$ref": "_23057740A6C34EA4"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_7154D91D49EF4445",
+              "source": {
+                "$ref": "_F0A50C2BC6794EB5"
+              },
+              "target": {
+                "$ref": "_F9FD033DAA1E4CA6"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_71B72E636715448F",
+              "source": {
+                "$ref": "_F0A50C2BC6794EB5"
+              },
+              "target": {
+                "$ref": "_E249C024CE894F5E"
+              }
+            },
+            {
+              "_type": "UMLIncludeView",
+              "_id": "_954395BB8EE5419B",
+              "source": {
+                "$ref": "_E2AA5C970FCC4037"
+              },
+              "target": {
+                "$ref": "_5E64E2BEA74B45DE"
+              },
+              "name": "<<include>>"
+            },
+            {
+              "_type": "UMLIncludeView",
+              "_id": "_D75402902B424F4E",
+              "source": {
+                "$ref": "_FDFBCC14F0BE4860"
+              },
+              "target": {
+                "$ref": "_5E64E2BEA74B45DE"
+              },
+              "name": "<<include>>"
+            },
+            {
+              "_type": "UMLIncludeView",
+              "_id": "_19118E41B97B4451",
+              "source": {
+                "$ref": "_917DF186B25A4CBB"
+              },
+              "target": {
+                "$ref": "_5E64E2BEA74B45DE"
+              },
+              "name": "<<include>>"
+            },
+            {
+              "_type": "UMLIncludeView",
+              "_id": "_B816300AB5F741FE",
+              "source": {
+                "$ref": "_F9B3ADC2581D476E"
+              },
+              "target": {
+                "$ref": "_5E64E2BEA74B45DE"
+              },
+              "name": "<<include>>"
+            },
+            {
+              "_type": "UMLIncludeView",
+              "_id": "_40AF439F12B54467",
+              "source": {
+                "$ref": "_E249C024CE894F5E"
+              },
+              "target": {
+                "$ref": "_5E64E2BEA74B45DE"
+              },
+              "name": "<<include>>"
+            },
+            {
+              "_type": "UMLIncludeView",
+              "_id": "_B1D5B57BA3A848EF",
+              "source": {
+                "$ref": "_74D2A69C64044837"
+              },
+              "target": {
+                "$ref": "_5E64E2BEA74B45DE"
+              },
+              "name": "<<include>>"
+            },
+            {
+              "_type": "UMLIncludeView",
+              "_id": "_645A67EA8B4B46B7",
+              "source": {
+                "$ref": "_C8FAF9CC190249ED"
+              },
+              "target": {
+                "$ref": "_5E64E2BEA74B45DE"
+              },
+              "name": "<<include>>"
+            }
+          ]
+        },
+        {
+          "_type": "UMLActivityDiagram",
+          "_id": "_26BE3EC0430D48C2",
+          "name": "Activité – S'authentifier",
+          "ownedViews": [
+            {
+              "_type": "UMLSwimlaneView",
+              "_id": "_1DE55E434DEB47EC",
+              "name": "Utilisateur",
+              "x": 10,
+              "y": 10,
+              "width": 240,
+              "height": 700,
+              "isHorizontal": false
+            },
+            {
+              "_type": "UMLSwimlaneView",
+              "_id": "_9A837B4756B340AA",
+              "name": "Système",
+              "x": 260,
+              "y": 10,
+              "width": 320,
+              "height": 700,
+              "isHorizontal": false
+            },
+            {
+              "_type": "UMLInitialPseudostateView",
+              "_id": "_A7C465F00E774E22",
+              "x": 110,
+              "y": 50,
+              "width": 20,
+              "height": 20
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_370ABEAF832946A3",
+              "name": 50,
+              "x": 90,
+              "y": "Accéder à /login",
+              "width": 180,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_40773D9B5E2B4DB7",
+              "name": 280,
+              "x": 90,
+              "y": "Afficher formulaire connexion",
+              "width": 180,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_58D6EE8686B54A9A",
+              "name": 50,
+              "x": 155,
+              "y": "Saisir email + mot de passe",
+              "width": 180,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_B8DA20D5C49740BE",
+              "name": 280,
+              "x": 155,
+              "y": "POST /login",
+              "width": 180,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_D105D4D9F65E47F1",
+              "name": 280,
+              "x": 210,
+              "y": "Vérifier identifiants (bcrypt)",
+              "width": 180,
+              "height": 40
+            },
+            {
+              "_type": "UMLDecisionView",
+              "_id": "_A08C0F144FCD48B3",
+              "x": 380,
+              "y": 265,
+              "width": 40,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_CFDFED8726AA46D9",
+              "name": 280,
+              "x": 320,
+              "y": "Vérifier 2FA activée?",
+              "width": 180,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_7F4170DB56F64E84",
+              "name": 280,
+              "x": 380,
+              "y": "Demander code TOTP",
+              "width": 180,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_870750CD2E8F4D50",
+              "name": 280,
+              "x": 430,
+              "y": "Vérifier code TOTP (RFC 6238)",
+              "width": 180,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_0523B22BD1A74796",
+              "name": 280,
+              "x": 490,
+              "y": "Ouvrir session + rediriger dashboard",
+              "width": 180,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_EA2D1F1B36744740",
+              "name": 280,
+              "x": 440,
+              "y": "Afficher message d'erreur",
+              "width": 180,
+              "height": 40
+            },
+            {
+              "_type": "UMLDecisionView",
+              "_id": "_44404C65A5674CA0",
+              "x": 340,
+              "y": 460,
+              "width": 40,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_5C79860BF8614EE2",
+              "name": 280,
+              "x": 520,
+              "y": "Bloquer compte temporairement (30 min)",
+              "width": 180,
+              "height": 40
+            },
+            {
+              "_type": "UMLActivityFinalView",
+              "_id": "_508319A2E60A46F1",
+              "x": 390,
+              "y": 580,
+              "width": 24,
+              "height": 24
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_28856F93A30A4E54",
+              "source": {
+                "$ref": "_A7C465F00E774E22"
+              },
+              "target": {
+                "$ref": "_370ABEAF832946A3"
+              }
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_DBB04012EB8F40EA",
+              "source": {
+                "$ref": "_A08C0F144FCD48B3"
+              },
+              "target": {
+                "$ref": "_CFDFED8726AA46D9"
+              },
+              "name": "[Identifiants valides]"
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_357400B073F24513",
+              "source": {
+                "$ref": "_A08C0F144FCD48B3"
+              },
+              "target": {
+                "$ref": "_EA2D1F1B36744740"
+              },
+              "name": "[Identifiants invalides]"
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_B97568B5D4324FD6",
+              "source": {
+                "$ref": "_CFDFED8726AA46D9"
+              },
+              "target": {
+                "$ref": "_870750CD2E8F4D50"
+              },
+              "name": "[2FA activée]"
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_4D37563F90F04106",
+              "source": {
+                "$ref": "_870750CD2E8F4D50"
+              },
+              "target": {
+                "$ref": "_508319A2E60A46F1"
+              }
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_18F30AF5C9DE4499",
+              "source": {
+                "$ref": "_EA2D1F1B36744740"
+              },
+              "target": {
+                "$ref": "_44404C65A5674CA0"
+              }
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_BF0958BD6F9C4037",
+              "source": {
+                "$ref": "_44404C65A5674CA0"
+              },
+              "target": {
+                "$ref": "_58D6EE8686B54A9A"
+              },
+              "name": "[Essais < 3]"
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_70E8EC9D26F8444B",
+              "source": {
+                "$ref": "_44404C65A5674CA0"
+              },
+              "target": {
+                "$ref": "_5C79860BF8614EE2"
+              },
+              "name": "[Essais >= 3]"
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_CB61215ACC2A423B",
+              "source": {
+                "$ref": "_5C79860BF8614EE2"
+              },
+              "target": {
+                "$ref": "_508319A2E60A46F1"
+              }
+            }
+          ]
+        },
+        {
+          "_type": "UMLActivityDiagram",
+          "_id": "_BB0ABCCD31554D06",
+          "name": "Activité – Cycle de vie du Mémoire",
+          "ownedViews": [
+            {
+              "_type": "UMLSwimlaneView",
+              "_id": "_B1FA3C7CAF93426A",
+              "name": "Étudiant",
+              "x": 10,
+              "y": 10,
+              "width": 200,
+              "height": 820,
+              "isHorizontal": false
+            },
+            {
+              "_type": "UMLSwimlaneView",
+              "_id": "_FC0331D0EC944C2E",
+              "name": "Encadreur",
+              "x": 215,
+              "y": 10,
+              "width": 200,
+              "height": 820,
+              "isHorizontal": false
+            },
+            {
+              "_type": "UMLSwimlaneView",
+              "_id": "_E13DAEA35112484E",
+              "name": "Admin / Resp.",
+              "x": 420,
+              "y": 10,
+              "width": 200,
+              "height": 820,
+              "isHorizontal": false
+            },
+            {
+              "_type": "UMLSwimlaneView",
+              "_id": "_E4AC300A0ADB4A41",
+              "name": "Jury",
+              "x": 625,
+              "y": 10,
+              "width": 200,
+              "height": 820,
+              "isHorizontal": false
+            },
+            {
+              "_type": "UMLInitialPseudostateView",
+              "_id": "_DFC6D2AEBB6D4A73",
+              "x": 95,
+              "y": 50,
+              "width": 20,
+              "height": 20
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_AE2103AD7B864AED",
+              "name": 30,
+              "x": 95,
+              "y": "Soumettre thème\n(titre + description)",
+              "width": 190,
+              "height": 50
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_FA8247FCE53B4EEE",
+              "name": 220,
+              "x": 95,
+              "y": "Notification encadreur",
+              "width": 180,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_D6706F0E01F64F33",
+              "name": 220,
+              "x": 165,
+              "y": "Valider / Rejeter thème",
+              "width": 180,
+              "height": 45
+            },
+            {
+              "_type": "UMLDecisionView",
+              "_id": "_1E2696EEB6634835",
+              "x": 305,
+              "y": 235,
+              "width": 40,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_AD391361E01645A8",
+              "name": 220,
+              "x": 285,
+              "y": "Saisir motif de rejet\n(obligatoire)",
+              "width": 180,
+              "height": 50
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_D3DF60174C6D41CB",
+              "name": 30,
+              "x": 295,
+              "y": "statut = rejeté",
+              "width": 160,
+              "height": 35
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_A915ABD896A149E9",
+              "name": 30,
+              "x": 360,
+              "y": "Modifier et resoumettre",
+              "width": 160,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_3226B9B0064D477F",
+              "name": 30,
+              "x": 255,
+              "y": "statut = en_cours",
+              "width": 160,
+              "height": 35
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_9D2F7144024E43CF",
+              "name": 30,
+              "x": 430,
+              "y": "Déposer version PDF\n(versionnage auto)",
+              "width": 190,
+              "height": 50
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_79A3A20B4E074084",
+              "name": 220,
+              "x": 430,
+              "y": "Commenter version\n(chat interne)",
+              "width": 180,
+              "height": 50
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_7101707F8CF240B8",
+              "name": 220,
+              "x": 510,
+              "y": "Valider version finale",
+              "width": 180,
+              "height": 45
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_2C79F5344DD44AAC",
+              "name": 30,
+              "x": 510,
+              "y": "statut = valide",
+              "width": 160,
+              "height": 35
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_807A83CDB6D649D9",
+              "name": 430,
+              "x": 560,
+              "y": "Planifier soutenance\n(date + salle + jury)",
+              "width": 185,
+              "height": 50
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_C038927B35354CE6",
+              "name": 430,
+              "x": 635,
+              "y": "Soutenance a lieu",
+              "width": 185,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_8D88CF4E646142B8",
+              "name": 635,
+              "x": 635,
+              "y": "Évaluer soutenance\n(note + mention)",
+              "width": 180,
+              "height": 50
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_F837C384A5844220",
+              "name": 635,
+              "x": 705,
+              "y": "Finaliser (Président)",
+              "width": 180,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_F188E02B4FD84934",
+              "name": 30,
+              "x": 600,
+              "y": "statut = soutenu",
+              "width": 160,
+              "height": 35
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_882BBA13A55D4751",
+              "name": 430,
+              "x": 720,
+              "y": "Téléverser attestation\n→ Bibliothèque",
+              "width": 185,
+              "height": 50
+            },
+            {
+              "_type": "UMLActivityFinalView",
+              "_id": "_62294AD451E7421C",
+              "x": 95,
+              "y": 790,
+              "width": 24,
+              "height": 24
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_2CF69E2A38FD4CE5",
+              "source": {
+                "$ref": "_DFC6D2AEBB6D4A73"
+              },
+              "target": {
+                "$ref": "_AE2103AD7B864AED"
+              }
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_F60719B4E7C84E7F",
+              "source": {
+                "$ref": "_AE2103AD7B864AED"
+              },
+              "target": {
+                "$ref": "_D6706F0E01F64F33"
+              }
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_49B5259562A94E10",
+              "source": {
+                "$ref": "_D6706F0E01F64F33"
+              },
+              "target": {
+                "$ref": "_1E2696EEB6634835"
+              }
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_2CD78E623AE8485B",
+              "source": {
+                "$ref": "_1E2696EEB6634835"
+              },
+              "target": {
+                "$ref": "_AD391361E01645A8"
+              },
+              "name": "[Rejeté]"
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_86E845CA74F844AF",
+              "source": {
+                "$ref": "_1E2696EEB6634835"
+              },
+              "target": {
+                "$ref": "_9D2F7144024E43CF"
+              },
+              "name": "[Validé → en_cours]"
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_AFF2DF5BAFAC49AE",
+              "source": {
+                "$ref": "_AD391361E01645A8"
+              },
+              "target": {
+                "$ref": "_AE2103AD7B864AED"
+              },
+              "name": "Resoumettre"
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_87393EA841CA48BF",
+              "source": {
+                "$ref": "_9D2F7144024E43CF"
+              },
+              "target": {
+                "$ref": "_79A3A20B4E074084"
+              }
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_A109D7B05B42497B",
+              "source": {
+                "$ref": "_79A3A20B4E074084"
+              },
+              "target": {
+                "$ref": "_7101707F8CF240B8"
+              }
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_3551C0E181FA4F10",
+              "source": {
+                "$ref": "_7101707F8CF240B8"
+              },
+              "target": {
+                "$ref": "_807A83CDB6D649D9"
+              },
+              "name": "[valide]"
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_9434539141894C30",
+              "source": {
+                "$ref": "_807A83CDB6D649D9"
+              },
+              "target": {
+                "$ref": "_C038927B35354CE6"
+              }
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_6D29702D70BF4105",
+              "source": {
+                "$ref": "_C038927B35354CE6"
+              },
+              "target": {
+                "$ref": "_8D88CF4E646142B8"
+              }
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_F4F49268D27D4CEB",
+              "source": {
+                "$ref": "_8D88CF4E646142B8"
+              },
+              "target": {
+                "$ref": "_882BBA13A55D4751"
+              },
+              "name": "[finalisé]"
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_EF6854C17B8C43EC",
+              "source": {
+                "$ref": "_882BBA13A55D4751"
+              },
+              "target": {
+                "$ref": "_62294AD451E7421C"
+              }
+            }
+          ]
+        },
+        {
+          "_type": "UMLActivityDiagram",
+          "_id": "_3786701649B64B87",
+          "name": "Activité – Planification d'une Soutenance",
+          "ownedViews": [
+            {
+              "_type": "UMLSwimlaneView",
+              "_id": "_BBE136C8DD07461D",
+              "name": "Admin / Responsable",
+              "x": 10,
+              "y": 10,
+              "width": 260,
+              "height": 700,
+              "isHorizontal": false
+            },
+            {
+              "_type": "UMLSwimlaneView",
+              "_id": "_848D97688F504A90",
+              "name": "Système (Vérifications)",
+              "x": 280,
+              "y": 10,
+              "width": 320,
+              "height": 700,
+              "isHorizontal": false
+            },
+            {
+              "_type": "UMLInitialPseudostateView",
+              "_id": "_03627A05CDE341BD",
+              "x": 115,
+              "y": 55,
+              "width": 20,
+              "height": 20
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_C53136AC98404ED9",
+              "name": 30,
+              "x": 95,
+              "y": "Sélectionner mémoire\navec statut = valide",
+              "width": 230,
+              "height": 50
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_CE20F1ECB6CF4C42",
+              "name": 30,
+              "x": 175,
+              "y": "Choisir date, heure\net salle",
+              "width": 230,
+              "height": 50
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_71664F3227284A3F",
+              "name": 295,
+              "x": 240,
+              "y": "Vérifier disponibilité\nsalle (SQL chevaucht.)",
+              "width": 280,
+              "height": 50
+            },
+            {
+              "_type": "UMLDecisionView",
+              "_id": "_224F3F085F57497F",
+              "x": 415,
+              "y": 310,
+              "width": 40,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_6FD4E5D650E042CA",
+              "name": 295,
+              "x": 360,
+              "y": "HTTP 409 – Salle\nindisponible",
+              "width": 280,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_DD64BC7105444AA5",
+              "name": 295,
+              "x": 425,
+              "y": "Vérifier jury complet\n(président + examinateur)",
+              "width": 280,
+              "height": 50
+            },
+            {
+              "_type": "UMLDecisionView",
+              "_id": "_A54F69C02357438B",
+              "x": 415,
+              "y": 495,
+              "width": 40,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_F4A9E141A6FE4582",
+              "name": 295,
+              "x": 545,
+              "y": "HTTP 422 – Jury\nincomplet",
+              "width": 280,
+              "height": 40
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_BDCB9B988F4B485C",
+              "name": 295,
+              "x": 605,
+              "y": "INSERT soutenances\n+ notifier participants",
+              "width": 280,
+              "height": 50
+            },
+            {
+              "_type": "UMLActionView",
+              "_id": "_E26E4AA18DA442AD",
+              "name": 30,
+              "x": 620,
+              "y": "Soutenance planifiée ✓\n(notification + iCal)",
+              "width": 230,
+              "height": 50
+            },
+            {
+              "_type": "UMLActivityFinalView",
+              "_id": "_649592296F8C4082",
+              "x": 115,
+              "y": 680,
+              "width": 24,
+              "height": 24
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_49B26A9A3CF646FC",
+              "source": {
+                "$ref": "_03627A05CDE341BD"
+              },
+              "target": {
+                "$ref": "_C53136AC98404ED9"
+              }
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_ABC06A2822004657",
+              "source": {
+                "$ref": "_C53136AC98404ED9"
+              },
+              "target": {
+                "$ref": "_CE20F1ECB6CF4C42"
+              }
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_BFA306D94CB3437B",
+              "source": {
+                "$ref": "_CE20F1ECB6CF4C42"
+              },
+              "target": {
+                "$ref": "_71664F3227284A3F"
+              }
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_8B78EF7D947E4773",
+              "source": {
+                "$ref": "_71664F3227284A3F"
+              },
+              "target": {
+                "$ref": "_224F3F085F57497F"
+              }
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_A7DB3A3DE94E474A",
+              "source": {
+                "$ref": "_224F3F085F57497F"
+              },
+              "target": {
+                "$ref": "_6FD4E5D650E042CA"
+              },
+              "name": "[Salle occupée]"
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_833AAE9C28804228",
+              "source": {
+                "$ref": "_6FD4E5D650E042CA"
+              },
+              "target": {
+                "$ref": "_CE20F1ECB6CF4C42"
+              },
+              "name": "Choisir autre créneau"
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_B2F81D04B0FD4F75",
+              "source": {
+                "$ref": "_224F3F085F57497F"
+              },
+              "target": {
+                "$ref": "_DD64BC7105444AA5"
+              },
+              "name": "[Salle dispo]"
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_85D2B971867F47FE",
+              "source": {
+                "$ref": "_DD64BC7105444AA5"
+              },
+              "target": {
+                "$ref": "_A54F69C02357438B"
+              }
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_12FF0AD53D3745FA",
+              "source": {
+                "$ref": "_A54F69C02357438B"
+              },
+              "target": {
+                "$ref": "_F4A9E141A6FE4582"
+              },
+              "name": "[Jury incomplet]"
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_39EE6029119A4B62",
+              "source": {
+                "$ref": "_F4A9E141A6FE4582"
+              },
+              "target": {
+                "$ref": "_649592296F8C4082"
+              }
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_16FC7B259D904839",
+              "source": {
+                "$ref": "_A54F69C02357438B"
+              },
+              "target": {
+                "$ref": "_BDCB9B988F4B485C"
+              },
+              "name": "[Jury complet]"
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_4D8885D50B234A06",
+              "source": {
+                "$ref": "_BDCB9B988F4B485C"
+              },
+              "target": {
+                "$ref": "_E26E4AA18DA442AD"
+              }
+            },
+            {
+              "_type": "UMLControlFlowView",
+              "_id": "_06AC9FECAB0048C7",
+              "source": {
+                "$ref": "_E26E4AA18DA442AD"
+              },
+              "target": {
+                "$ref": "_649592296F8C4082"
+              }
+            }
+          ]
+        },
+        {
+          "_type": "UMLSequenceDiagram",
+          "_id": "_CAB2DD1B0ED040D2",
+          "name": "Séquence – S'authentifier",
+          "ownedViews": [
+            {
+              "_type": "UMLLifelineView",
+              "_id": "_26FAFC4739FF44D8",
+              "name": "Utilisateur",
+              "x": 30,
+              "y": 60,
+              "width": 120,
+              "height": 600
+            },
+            {
+              "_type": "UMLLifelineView",
+              "_id": "_93902608907E4CC1",
+              "name": "Navigateur",
+              "x": 185,
+              "y": 60,
+              "width": 120,
+              "height": 600
+            },
+            {
+              "_type": "UMLLifelineView",
+              "_id": "_F64DA65734C3489D",
+              "name": "AuthController",
+              "x": 340,
+              "y": 60,
+              "width": 120,
+              "height": 600
+            },
+            {
+              "_type": "UMLLifelineView",
+              "_id": "_191E07915CFC4C1E",
+              "name": "UserModel",
+              "x": 495,
+              "y": 60,
+              "width": 120,
+              "height": 600
+            },
+            {
+              "_type": "UMLLifelineView",
+              "_id": "_D79116759E994BA2",
+              "name": "Base MySQL",
+              "x": 650,
+              "y": 60,
+              "width": 120,
+              "height": 600
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_83928D1E0B0C4217",
+              "source": {
+                "$ref": "_26FAFC4739FF44D8"
+              },
+              "target": {
+                "$ref": "_93902608907E4CC1"
+              },
+              "name": "Accéder /login",
+              "y": 110,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_48A6844AE60747AA",
+              "source": {
+                "$ref": "_93902608907E4CC1"
+              },
+              "target": {
+                "$ref": "_F64DA65734C3489D"
+              },
+              "name": "GET /login",
+              "y": 140,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_1CB79C8330364FDD",
+              "source": {
+                "$ref": "_F64DA65734C3489D"
+              },
+              "target": {
+                "$ref": "_93902608907E4CC1"
+              },
+              "name": "Afficher formulaire",
+              "y": 165,
+              "messageSort": "reply"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_29BC0ECA046140AF",
+              "source": {
+                "$ref": "_26FAFC4739FF44D8"
+              },
+              "target": {
+                "$ref": "_93902608907E4CC1"
+              },
+              "name": "Saisir email + mot de passe",
+              "y": 195,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_B5C3D5A872AF4B97",
+              "source": {
+                "$ref": "_93902608907E4CC1"
+              },
+              "target": {
+                "$ref": "_F64DA65734C3489D"
+              },
+              "name": "POST /login {email, pwd}",
+              "y": 225,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_EBC2BCD3A1464973",
+              "source": {
+                "$ref": "_F64DA65734C3489D"
+              },
+              "target": {
+                "$ref": "_191E07915CFC4C1E"
+              },
+              "name": "findByEmail(email)",
+              "y": 255,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_EC79CA45F4044157",
+              "source": {
+                "$ref": "_191E07915CFC4C1E"
+              },
+              "target": {
+                "$ref": "_D79116759E994BA2"
+              },
+              "name": "SELECT * FROM utilisateurs",
+              "y": 285,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_D9011121F4A549EA",
+              "source": {
+                "$ref": "_D79116759E994BA2"
+              },
+              "target": {
+                "$ref": "_191E07915CFC4C1E"
+              },
+              "name": "hash + données user",
+              "y": 315,
+              "messageSort": "reply"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_2855AE869670415A",
+              "source": {
+                "$ref": "_191E07915CFC4C1E"
+              },
+              "target": {
+                "$ref": "_F64DA65734C3489D"
+              },
+              "name": "userData | null",
+              "y": 345,
+              "messageSort": "reply"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_3FF02328A5E94232",
+              "source": {
+                "$ref": "_F64DA65734C3489D"
+              },
+              "target": {
+                "$ref": "_191E07915CFC4C1E"
+              },
+              "name": "password_verify(pwd,hash)",
+              "y": 375,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_0521299EE7384054",
+              "source": {
+                "$ref": "_191E07915CFC4C1E"
+              },
+              "target": {
+                "$ref": "_F64DA65734C3489D"
+              },
+              "name": "true | false",
+              "y": 405,
+              "messageSort": "reply"
+            },
+            {
+              "_type": "UMLCombinedFragmentView",
+              "_id": "_A84EBF126B2345FD",
+              "name": "[Valides] 2FA? / [Invalides] erreur",
+              "interactionOperator": "alt",
+              "x": 100,
+              "y": 430,
+              "width": 700,
+              "height": 100
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_EB35A29221F446A7",
+              "source": {
+                "$ref": "_F64DA65734C3489D"
+              },
+              "target": {
+                "$ref": "_93902608907E4CC1"
+              },
+              "name": "Redirect /verify-2fa",
+              "y": 450,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_20DA2C368C6745F7",
+              "source": {
+                "$ref": "_93902608907E4CC1"
+              },
+              "target": {
+                "$ref": "_F64DA65734C3489D"
+              },
+              "name": "POST code TOTP",
+              "y": 475,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_1DF27C3854994C53",
+              "source": {
+                "$ref": "_F64DA65734C3489D"
+              },
+              "target": {
+                "$ref": "_191E07915CFC4C1E"
+              },
+              "name": "verifyTotp(secret,code)",
+              "y": 500,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_AE5229BEFCBE4CFD",
+              "source": {
+                "$ref": "_191E07915CFC4C1E"
+              },
+              "target": {
+                "$ref": "_F64DA65734C3489D"
+              },
+              "name": "true | false",
+              "y": 525,
+              "messageSort": "reply"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_08A7ACA8985942DB",
+              "source": {
+                "$ref": "_F64DA65734C3489D"
+              },
+              "target": {
+                "$ref": "_93902608907E4CC1"
+              },
+              "name": "HTTP 401 + message erreur",
+              "y": 470,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_6194C3CD9C054DC5",
+              "source": {
+                "$ref": "_F64DA65734C3489D"
+              },
+              "target": {
+                "$ref": "_191E07915CFC4C1E"
+              },
+              "name": "createSession(userId)",
+              "y": 555,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_81E25DD7EA274A21",
+              "source": {
+                "$ref": "_191E07915CFC4C1E"
+              },
+              "target": {
+                "$ref": "_D79116759E994BA2"
+              },
+              "name": "INSERT log connexion",
+              "y": 580,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_8DA9B3CFB7D74C70",
+              "source": {
+                "$ref": "_F64DA65734C3489D"
+              },
+              "target": {
+                "$ref": "_93902608907E4CC1"
+              },
+              "name": "Redirect /dashboard (302)",
+              "y": 610,
+              "messageSort": "reply"
+            }
+          ]
+        },
+        {
+          "_type": "UMLSequenceDiagram",
+          "_id": "_70103FFB973D4771",
+          "name": "Séquence – Dépôt d'une Version",
+          "ownedViews": [
+            {
+              "_type": "UMLLifelineView",
+              "_id": "_70E62D2967074BF4",
+              "name": "Étudiant",
+              "x": 30,
+              "y": 60,
+              "width": 120,
+              "height": 600
+            },
+            {
+              "_type": "UMLLifelineView",
+              "_id": "_A7B4410A03154E42",
+              "name": "Navigateur",
+              "x": 185,
+              "y": 60,
+              "width": 120,
+              "height": 600
+            },
+            {
+              "_type": "UMLLifelineView",
+              "_id": "_E8F8FA3E51CC48E9",
+              "name": "MemoireCtrl",
+              "x": 340,
+              "y": 60,
+              "width": 120,
+              "height": 600
+            },
+            {
+              "_type": "UMLLifelineView",
+              "_id": "_D87C2C4D8F5E4D0E",
+              "name": "VersionModel",
+              "x": 495,
+              "y": 60,
+              "width": 120,
+              "height": 600
+            },
+            {
+              "_type": "UMLLifelineView",
+              "_id": "_6293E379D9C048E5",
+              "name": "Stockage/FS",
+              "x": 650,
+              "y": 60,
+              "width": 120,
+              "height": 600
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_43824F0B27A64C57",
+              "source": {
+                "$ref": "_70E62D2967074BF4"
+              },
+              "target": {
+                "$ref": "_A7B4410A03154E42"
+              },
+              "name": "Accéder page dépôt",
+              "y": 110,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_8736C1732E514C08",
+              "source": {
+                "$ref": "_A7B4410A03154E42"
+              },
+              "target": {
+                "$ref": "_E8F8FA3E51CC48E9"
+              },
+              "name": "GET /memoire/deposer",
+              "y": 140,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_635C2B343C9B440B",
+              "source": {
+                "$ref": "_E8F8FA3E51CC48E9"
+              },
+              "target": {
+                "$ref": "_A7B4410A03154E42"
+              },
+              "name": "Formulaire de dépôt",
+              "y": 165,
+              "messageSort": "reply"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_5D79DDFB49C94248",
+              "source": {
+                "$ref": "_70E62D2967074BF4"
+              },
+              "target": {
+                "$ref": "_A7B4410A03154E42"
+              },
+              "name": "Sélectionner fichier PDF",
+              "y": 195,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_9481700ED0E3452F",
+              "source": {
+                "$ref": "_A7B4410A03154E42"
+              },
+              "target": {
+                "$ref": "_E8F8FA3E51CC48E9"
+              },
+              "name": "POST multipart/form-data",
+              "y": 225,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_09EDEF0D060A4C93",
+              "source": {
+                "$ref": "_E8F8FA3E51CC48E9"
+              },
+              "target": {
+                "$ref": "_D87C2C4D8F5E4D0E"
+              },
+              "name": "checkVerrou(id_memoire)",
+              "y": 255,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_DE5CDC6CD14D4F6F",
+              "source": {
+                "$ref": "_D87C2C4D8F5E4D0E"
+              },
+              "target": {
+                "$ref": "_6293E379D9C048E5"
+              },
+              "name": "SELECT verrou_jusqu_a FROM versions",
+              "y": 285,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_2139F09BE09F4A67",
+              "source": {
+                "$ref": "_6293E379D9C048E5"
+              },
+              "target": {
+                "$ref": "_D87C2C4D8F5E4D0E"
+              },
+              "name": "verrou actif | null",
+              "y": 315,
+              "messageSort": "reply"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_A0A46892056940A9",
+              "source": {
+                "$ref": "_D87C2C4D8F5E4D0E"
+              },
+              "target": {
+                "$ref": "_E8F8FA3E51CC48E9"
+              },
+              "name": "verrou = true|false",
+              "y": 345,
+              "messageSort": "reply"
+            },
+            {
+              "_type": "UMLCombinedFragmentView",
+              "_id": "_A97BABA6AAE84C25",
+              "name": "[Verrou actif] HTTP 409 / [Pas de verrou] continuer",
+              "interactionOperator": "alt",
+              "x": 100,
+              "y": 370,
+              "width": 700,
+              "height": 60
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_FB91E64E82204567",
+              "source": {
+                "$ref": "_E8F8FA3E51CC48E9"
+              },
+              "target": {
+                "$ref": "_A7B4410A03154E42"
+              },
+              "name": "HTTP 409 – Dépôt en cours",
+              "y": 390,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_9C448D22F6904D53",
+              "source": {
+                "$ref": "_E8F8FA3E51CC48E9"
+              },
+              "target": {
+                "$ref": "_D87C2C4D8F5E4D0E"
+              },
+              "name": "poserVerrou(5 min)",
+              "y": 440,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_B75D6A820F0C47DA",
+              "source": {
+                "$ref": "_E8F8FA3E51CC48E9"
+              },
+              "target": {
+                "$ref": "_E8F8FA3E51CC48E9"
+              },
+              "name": "validerFichier(mime, taille)",
+              "y": 465,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_353C82BFCBCF4D3E",
+              "source": {
+                "$ref": "_E8F8FA3E51CC48E9"
+              },
+              "target": {
+                "$ref": "_6293E379D9C048E5"
+              },
+              "name": "Déplacer fichier → /uploads/",
+              "y": 495,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_5F7DC0662A3F4A3B",
+              "source": {
+                "$ref": "_6293E379D9C048E5"
+              },
+              "target": {
+                "$ref": "_E8F8FA3E51CC48E9"
+              },
+              "name": "chemin_fichier",
+              "y": 520,
+              "messageSort": "reply"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_D429A54589CA4FE4",
+              "source": {
+                "$ref": "_E8F8FA3E51CC48E9"
+              },
+              "target": {
+                "$ref": "_D87C2C4D8F5E4D0E"
+              },
+              "name": "INSERT versions (numero++, chemin)",
+              "y": 550,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_7E1A0EE6EF644553",
+              "source": {
+                "$ref": "_D87C2C4D8F5E4D0E"
+              },
+              "target": {
+                "$ref": "_6293E379D9C048E5"
+              },
+              "name": "INSERT INTO versions",
+              "y": 575,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_EBB03CEC6E3B4F56",
+              "source": {
+                "$ref": "_6293E379D9C048E5"
+              },
+              "target": {
+                "$ref": "_D87C2C4D8F5E4D0E"
+              },
+              "name": "version_id",
+              "y": 600,
+              "messageSort": "reply"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_F4F474BF37104443",
+              "source": {
+                "$ref": "_D87C2C4D8F5E4D0E"
+              },
+              "target": {
+                "$ref": "_E8F8FA3E51CC48E9"
+              },
+              "name": "ok",
+              "y": 625,
+              "messageSort": "reply"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_6C37EDC62E974467",
+              "source": {
+                "$ref": "_E8F8FA3E51CC48E9"
+              },
+              "target": {
+                "$ref": "_D87C2C4D8F5E4D0E"
+              },
+              "name": "leverVerrou()",
+              "y": 650,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_FDC5AB43973F49B9",
+              "source": {
+                "$ref": "_E8F8FA3E51CC48E9"
+              },
+              "target": {
+                "$ref": "_E8F8FA3E51CC48E9"
+              },
+              "name": "envoyerNotifEncadreur()",
+              "y": 675,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_B7F7BB0FAA8E4E15",
+              "source": {
+                "$ref": "_E8F8FA3E51CC48E9"
+              },
+              "target": {
+                "$ref": "_A7B4410A03154E42"
+              },
+              "name": "HTTP 200 – Version N déposée",
+              "y": 700,
+              "messageSort": "reply"
+            }
+          ]
+        },
+        {
+          "_type": "UMLSequenceDiagram",
+          "_id": "_21B0878D56F3474F",
+          "name": "Séquence – Planification d'une Soutenance",
+          "ownedViews": [
+            {
+              "_type": "UMLLifelineView",
+              "_id": "_96D82A178BFE43AB",
+              "name": "Admin",
+              "x": 30,
+              "y": 60,
+              "width": 120,
+              "height": 600
+            },
+            {
+              "_type": "UMLLifelineView",
+              "_id": "_3A11BFE5DF5F4720",
+              "name": "SoutenanceCtrl",
+              "x": 185,
+              "y": 60,
+              "width": 120,
+              "height": 600
+            },
+            {
+              "_type": "UMLLifelineView",
+              "_id": "_E8E7371CAF40416C",
+              "name": "SalleModel",
+              "x": 340,
+              "y": 60,
+              "width": 120,
+              "height": 600
+            },
+            {
+              "_type": "UMLLifelineView",
+              "_id": "_70C347C9DB2B4586",
+              "name": "JuryModel",
+              "x": 495,
+              "y": 60,
+              "width": 120,
+              "height": 600
+            },
+            {
+              "_type": "UMLLifelineView",
+              "_id": "_DC8720A4E1064D0A",
+              "name": "NotifCtrl",
+              "x": 650,
+              "y": 60,
+              "width": 120,
+              "height": 600
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_4BA181DDAD5A49EC",
+              "source": {
+                "$ref": "_96D82A178BFE43AB"
+              },
+              "target": {
+                "$ref": "_3A11BFE5DF5F4720"
+              },
+              "name": "Sélectionner mémoire valide",
+              "y": 110,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_D89D640EB5274584",
+              "source": {
+                "$ref": "_96D82A178BFE43AB"
+              },
+              "target": {
+                "$ref": "_3A11BFE5DF5F4720"
+              },
+              "name": "Choisir date, heure, salle",
+              "y": 135,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_654DA883953F4946",
+              "source": {
+                "$ref": "_3A11BFE5DF5F4720"
+              },
+              "target": {
+                "$ref": "_E8E7371CAF40416C"
+              },
+              "name": "checkDispo(id_salle,debut,fin)",
+              "y": 165,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_6CA60BD5037044B1",
+              "source": {
+                "$ref": "_E8E7371CAF40416C"
+              },
+              "target": {
+                "$ref": "_3A11BFE5DF5F4720"
+              },
+              "name": "nbConflits (0 ou +)",
+              "y": 195,
+              "messageSort": "reply"
+            },
+            {
+              "_type": "UMLCombinedFragmentView",
+              "_id": "_9A2186D8C5654A9A",
+              "name": "[Salle occupée] HTTP 409 / [Salle dispo] continuer",
+              "interactionOperator": "alt",
+              "x": 100,
+              "y": 215,
+              "width": 700,
+              "height": 60
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_E7994D9E29B24FCB",
+              "source": {
+                "$ref": "_3A11BFE5DF5F4720"
+              },
+              "target": {
+                "$ref": "_96D82A178BFE43AB"
+              },
+              "name": "HTTP 409 – Salle indisponible",
+              "y": 235,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_D6BEC6F5AB69429D",
+              "source": {
+                "$ref": "_3A11BFE5DF5F4720"
+              },
+              "target": {
+                "$ref": "_70C347C9DB2B4586"
+              },
+              "name": "checkJuryComplet(id_soutenance)",
+              "y": 290,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_29E603F6B7EE4F50",
+              "source": {
+                "$ref": "_70C347C9DB2B4586"
+              },
+              "target": {
+                "$ref": "_3A11BFE5DF5F4720"
+              },
+              "name": "juryOk: true | false",
+              "y": 320,
+              "messageSort": "reply"
+            },
+            {
+              "_type": "UMLCombinedFragmentView",
+              "_id": "_26EAD5CD776F4DED",
+              "name": "[Jury incomplet] HTTP 422 / [Jury complet] continuer",
+              "interactionOperator": "alt",
+              "x": 100,
+              "y": 340,
+              "width": 700,
+              "height": 60
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_6EE7F2BF835748C8",
+              "source": {
+                "$ref": "_3A11BFE5DF5F4720"
+              },
+              "target": {
+                "$ref": "_96D82A178BFE43AB"
+              },
+              "name": "HTTP 422 – Jury incomplet",
+              "y": 360,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_0EC93E6B186B4FB1",
+              "source": {
+                "$ref": "_3A11BFE5DF5F4720"
+              },
+              "target": {
+                "$ref": "_70C347C9DB2B4586"
+              },
+              "name": "checkIndisponibilites(jurys,debut,fin)",
+              "y": 415,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_F3BDF9B855774496",
+              "source": {
+                "$ref": "_70C347C9DB2B4586"
+              },
+              "target": {
+                "$ref": "_3A11BFE5DF5F4720"
+              },
+              "name": "conflits: []",
+              "y": 445,
+              "messageSort": "reply"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_B09146F13E9D4CCC",
+              "source": {
+                "$ref": "_3A11BFE5DF5F4720"
+              },
+              "target": {
+                "$ref": "_E8E7371CAF40416C"
+              },
+              "name": "INSERT INTO soutenances",
+              "y": 475,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_A8CC09C2DAFB41F0",
+              "source": {
+                "$ref": "_E8E7371CAF40416C"
+              },
+              "target": {
+                "$ref": "_3A11BFE5DF5F4720"
+              },
+              "name": "soutenance_id",
+              "y": 505,
+              "messageSort": "reply"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_E93972FA8A13421B",
+              "source": {
+                "$ref": "_3A11BFE5DF5F4720"
+              },
+              "target": {
+                "$ref": "_DC8720A4E1064D0A"
+              },
+              "name": "notifierTous(étudiant+encadreur+jury)",
+              "y": 535,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_A10DF5515E8C4500",
+              "source": {
+                "$ref": "_DC8720A4E1064D0A"
+              },
+              "target": {
+                "$ref": "_3A11BFE5DF5F4720"
+              },
+              "name": "sendEmail(participants) × N",
+              "y": 565,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_27AC5EA1EA454DE3",
+              "source": {
+                "$ref": "_DC8720A4E1064D0A"
+              },
+              "target": {
+                "$ref": "_3A11BFE5DF5F4720"
+              },
+              "name": "createNotifications × N",
+              "y": 595,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_2DBB67624DAA41A7",
+              "source": {
+                "$ref": "_DC8720A4E1064D0A"
+              },
+              "target": {
+                "$ref": "_3A11BFE5DF5F4720"
+              },
+              "name": "exportIcal(soutenance)",
+              "y": 620,
+              "messageSort": "synchCall"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_9A56259E92344DBB",
+              "source": {
+                "$ref": "_DC8720A4E1064D0A"
+              },
+              "target": {
+                "$ref": "_3A11BFE5DF5F4720"
+              },
+              "name": "notifications envoyées ✓",
+              "y": 645,
+              "messageSort": "reply"
+            },
+            {
+              "_type": "UMLMessageView",
+              "_id": "_C69AD622B75449B0",
+              "source": {
+                "$ref": "_3A11BFE5DF5F4720"
+              },
+              "target": {
+                "$ref": "_96D82A178BFE43AB"
+              },
+              "name": "HTTP 201 – Soutenance planifiée",
+              "y": 675,
+              "messageSort": "reply"
+            }
+          ]
+        },
+        {
+          "_type": "UMLClassDiagram",
+          "_id": "_EB833AA9D35B4A1A",
+          "name": "Diagramme de Classes – e-Mémoire LCS",
+          "ownedViews": [
+            {
+              "_type": "UMLClass",
+              "_id": "_A79EE8F92D8F4E4F",
+              "name": "«abstract» Utilisateur",
+              "isAbstract": true,
+              "attributes": [
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_9154F33B49FA4CA1",
+                  "name": "id : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_3619EC9F25FB41E4",
+                  "name": "nom, prenom : string",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_8C67B9BF484049B8",
+                  "name": "email : string",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_F4F6CF0CF23946DA",
+                  "name": "mot_de_passe : string",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_CF01DE0D9CCA48D9",
+                  "name": "role : enum",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_A9FD9F12A8F74DB5",
+                  "name": "actif : boolean",
+                  "visibility": "private"
+                }
+              ],
+              "operations": [
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_6EC9FB97E9FD4BF8",
+                  "name": "seConnecter()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_1DC6F11050FE4073",
+                  "name": "seDeconnecter()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_C132194D5F834D7A",
+                  "name": "modifierProfil()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_22240E7EF1664BC8",
+                  "name": "recevoirNotif()",
+                  "visibility": "public"
+                }
+              ],
+              "x": 330,
+              "y": 20,
+              "width": 220,
+              "height": 135
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "_4E4805CB43EF44AA",
+              "name": "Etudiant",
+              "isAbstract": false,
+              "attributes": [
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_E411992B50CC45AE",
+                  "name": "matricule : string",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_C332BAA7718E43C0",
+                  "name": "id_filiere : int",
+                  "visibility": "private"
+                }
+              ],
+              "operations": [
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_7F1424B9CE84477C",
+                  "name": "soumettreSujet()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_B9A3ACDBFB6640EF",
+                  "name": "deposerVersion()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_69C7E9B425A148A2",
+                  "name": "telechargerAttest()",
+                  "visibility": "public"
+                }
+              ],
+              "x": 10,
+              "y": 210,
+              "width": 170,
+              "height": 100
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "_DD3CDE54ABA741AC",
+              "name": "Encadreur",
+              "isAbstract": false,
+              "attributes": [],
+              "operations": [
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_8A00E5A37B574E6C",
+                  "name": "validerSujet()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_DF626F3634E74A69",
+                  "name": "validerVersionFinale()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_EF04214523B04333",
+                  "name": "commenter()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_A2B98B3364464690",
+                  "name": "verifierPlagiat()",
+                  "visibility": "public"
+                }
+              ],
+              "x": 195,
+              "y": 210,
+              "width": 160,
+              "height": 100
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "_B66D5BF28129446C",
+              "name": "Jury",
+              "isAbstract": false,
+              "attributes": [],
+              "operations": [
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_E68B0F07D1794CA3",
+                  "name": "evaluerSoutenance()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_75731DC62C3948B5",
+                  "name": "finaliserSoutenance()",
+                  "visibility": "public"
+                }
+              ],
+              "x": 365,
+              "y": 210,
+              "width": 150,
+              "height": 90
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "_B5D55A6D01ED4951",
+              "name": "Responsable",
+              "isAbstract": false,
+              "attributes": [],
+              "operations": [
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_42C111B09E33454B",
+                  "name": "planifierSoutenance()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_6B22C36011DA4B41",
+                  "name": "affecterEncadreur()",
+                  "visibility": "public"
+                }
+              ],
+              "x": 525,
+              "y": 210,
+              "width": 170,
+              "height": 90
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "_FAC03868DA4E4126",
+              "name": "Administrateur",
+              "isAbstract": false,
+              "attributes": [],
+              "operations": [
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_CA1C085425E2444B",
+                  "name": "gererUtilisateurs()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_914BD34AED694D69",
+                  "name": "televerserAttest()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_3614B1CAC8884758",
+                  "name": "consulterLogs()",
+                  "visibility": "public"
+                }
+              ],
+              "x": 705,
+              "y": 210,
+              "width": 190,
+              "height": 90
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "_7400E0201E1E44D7",
+              "name": "Mémoire",
+              "isAbstract": false,
+              "attributes": [
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_BAD92B834BF34404",
+                  "name": "id : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_3CD203380C2B43F3",
+                  "name": "titre : string",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_B4DFA440C3114256",
+                  "name": "resume : text",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_A325D01F602E4F24",
+                  "name": "statut : enum",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_97FD2598679F4574",
+                  "name": "vues : int",
+                  "visibility": "private"
+                }
+              ],
+              "operations": [
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_DD7492F806C6482C",
+                  "name": "changerStatut()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_1E62B6EEA8A14F8F",
+                  "name": "getVersionActuelle()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_26F02F4BBF0741CF",
+                  "name": "estPlanifiable()",
+                  "visibility": "public"
+                }
+              ],
+              "x": 300,
+              "y": 380,
+              "width": 210,
+              "height": 130
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "_E4C8815351A44A96",
+              "name": "Version",
+              "isAbstract": false,
+              "attributes": [
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_D11455CEAF3C45FB",
+                  "name": "id : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_21AFBC8CE7604E87",
+                  "name": "id_memoire : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_E03C1BAA1DB24B61",
+                  "name": "numero : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_16E0D084D01F4C22",
+                  "name": "chemin_pdf : string",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_28B0A01E6FA84AA1",
+                  "name": "verrou_jusqu_a : datetime",
+                  "visibility": "private"
+                }
+              ],
+              "operations": [
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_D232C8DF9C204CE8",
+                  "name": "deposer()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_7B22D096CDF84BA7",
+                  "name": "poserVerrou()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_68A4C7584B4B4A41",
+                  "name": "leverVerrou()",
+                  "visibility": "public"
+                }
+              ],
+              "x": 20,
+              "y": 380,
+              "width": 175,
+              "height": 110
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "_DAD052EE522741F9",
+              "name": "Commentaire",
+              "isAbstract": false,
+              "attributes": [
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_86DAFC4914BB413F",
+                  "name": "id : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_50FA63F2DFC84D24",
+                  "name": "id_memoire : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_F3558222841948B5",
+                  "name": "id_auteur : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_B8AB08D19AA44097",
+                  "name": "contenu : text",
+                  "visibility": "private"
+                }
+              ],
+              "operations": [
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_BD23EBC97B484375",
+                  "name": "envoyer()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_433B933D34114A04",
+                  "name": "lire()",
+                  "visibility": "public"
+                }
+              ],
+              "x": 20,
+              "y": 560,
+              "width": 175,
+              "height": 100
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "_D02AC805732F45A1",
+              "name": "Soutenance",
+              "isAbstract": false,
+              "attributes": [
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_AE0FD942826B4CA8",
+                  "name": "id : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_5F72BB23602146DC",
+                  "name": "id_memoire : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_3212B4DAE4BB43A3",
+                  "name": "id_salle : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_AE465B5214AB49C6",
+                  "name": "date_heure : datetime",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_4B61790A210441A4",
+                  "name": "statut : enum",
+                  "visibility": "private"
+                }
+              ],
+              "operations": [
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_5D5AA543401F44AF",
+                  "name": "planifier()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_723B8DA4D0A045C4",
+                  "name": "finaliser()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_B0E7C1D4073F44C0",
+                  "name": "exporterIcal()",
+                  "visibility": "public"
+                }
+              ],
+              "x": 530,
+              "y": 380,
+              "width": 180,
+              "height": 110
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "_14EC0E23DBBF49D4",
+              "name": "JurySoutenance",
+              "isAbstract": false,
+              "attributes": [
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_F42DEC5C854F46E5",
+                  "name": "id : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_7A18E940AAEC4599",
+                  "name": "id_soutenance : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_AE3B6F14D9384892",
+                  "name": "id_jury : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_12D39863A4A7412C",
+                  "name": "role : enum",
+                  "visibility": "private"
+                }
+              ],
+              "operations": [
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_543E09BDC6BB4503",
+                  "name": "ajouterMembre()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_5DBE39B406C44991",
+                  "name": "notifierMembre()",
+                  "visibility": "public"
+                }
+              ],
+              "x": 530,
+              "y": 560,
+              "width": 180,
+              "height": 90
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "_B2F96C5B69C74F52",
+              "name": "Evaluation",
+              "isAbstract": false,
+              "attributes": [
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_F6885536A444440D",
+                  "name": "id : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_D19CEAEAF9F14E1A",
+                  "name": "id_soutenance : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_D21E042927FE4BAB",
+                  "name": "id_jury : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_44C74487929345E8",
+                  "name": "note : decimal",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_02D8AC8154FC4171",
+                  "name": "mention : string",
+                  "visibility": "private"
+                }
+              ],
+              "operations": [
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_FDB590977CA44CFC",
+                  "name": "saisir()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_736398443BC64452",
+                  "name": "calculerMention()",
+                  "visibility": "public"
+                }
+              ],
+              "x": 730,
+              "y": 560,
+              "width": 175,
+              "height": 100
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "_B18B908D103B49DF",
+              "name": "Attestation",
+              "isAbstract": false,
+              "attributes": [
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_6F0419504EB24105",
+                  "name": "id : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_EB86A73641C54E95",
+                  "name": "id_etudiant : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_F8FA6C9806E14FFC",
+                  "name": "id_soutenance : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_A39D63ED73F74F59",
+                  "name": "chemin_pdf : string",
+                  "visibility": "private"
+                }
+              ],
+              "operations": [
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_4F863D8462534098",
+                  "name": "televerser()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_163DC644CC76401D",
+                  "name": "telecharger()",
+                  "visibility": "public"
+                }
+              ],
+              "x": 730,
+              "y": 380,
+              "width": 175,
+              "height": 90
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "_A473353EB60F45AF",
+              "name": "Notification",
+              "isAbstract": false,
+              "attributes": [
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_9DAB79DD92C749B7",
+                  "name": "id : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_AFB5D6A6A50A44F4",
+                  "name": "id_utilisateur : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_A264A5B2B14B4858",
+                  "name": "message : text",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_674F2D3BE3104E5B",
+                  "name": "lue : boolean",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_740D1A552BA841F4",
+                  "name": "url : string",
+                  "visibility": "private"
+                }
+              ],
+              "operations": [
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_A4F28E7CC84C40CA",
+                  "name": "envoyer()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_4DFC183F4E3F4075",
+                  "name": "marquerLue()",
+                  "visibility": "public"
+                }
+              ],
+              "x": 20,
+              "y": 700,
+              "width": 175,
+              "height": 90
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "_88845BDC7CED411A",
+              "name": "Salle",
+              "isAbstract": false,
+              "attributes": [
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_66848BFE751C43A2",
+                  "name": "id : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_F4A9AF19E5624938",
+                  "name": "nom : string",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_4532B9410F3E411E",
+                  "name": "capacite : int",
+                  "visibility": "private"
+                }
+              ],
+              "operations": [
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_54BF9DDDB6CA4A85",
+                  "name": "verifierDisponibilite()",
+                  "visibility": "public"
+                }
+              ],
+              "x": 530,
+              "y": 700,
+              "width": 160,
+              "height": 80
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "_A318620C65AC4B22",
+              "name": "Filiere",
+              "isAbstract": false,
+              "attributes": [
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_B1A3FF8D50A44D1F",
+                  "name": "id : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_3D0AC126C601471C",
+                  "name": "nom : string",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_52B39BBB274A4C49",
+                  "name": "code : string",
+                  "visibility": "private"
+                }
+              ],
+              "operations": [],
+              "x": 730,
+              "y": 700,
+              "width": 160,
+              "height": 70
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "_4404169ED89847BC",
+              "name": "AnneeUniversitaire",
+              "isAbstract": false,
+              "attributes": [
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_EB3C0658A9864A7C",
+                  "name": "id : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_424B2D615BB14E6A",
+                  "name": "libelle : string",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_13A25F7285E44F59",
+                  "name": "active : boolean",
+                  "visibility": "private"
+                }
+              ],
+              "operations": [
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_61A9BD903C654E7E",
+                  "name": "activer()",
+                  "visibility": "public"
+                }
+              ],
+              "x": 730,
+              "y": 790,
+              "width": 180,
+              "height": 70
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "_E601C0FE203D4C17",
+              "name": "Matricule",
+              "isAbstract": false,
+              "attributes": [
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_0E415D047E4A4365",
+                  "name": "id : int",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_51C1660BE08D4061",
+                  "name": "matricule : string",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "_791FB9BEBCC64731",
+                  "name": "utilise : boolean",
+                  "visibility": "private"
+                }
+              ],
+              "operations": [
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_CA9B07D9223A4B8C",
+                  "name": "verifier()",
+                  "visibility": "public"
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "_7EE2F125812345A8",
+                  "name": "marquerUtilise()",
+                  "visibility": "public"
+                }
+              ],
+              "x": 530,
+              "y": 790,
+              "width": 170,
+              "height": 70
+            },
+            {
+              "_type": "UMLGeneralizationView",
+              "_id": "_DEB7B304D2AF4C12",
+              "source": {
+                "$ref": "_4E4805CB43EF44AA"
+              },
+              "target": {
+                "$ref": "_A79EE8F92D8F4E4F"
+              }
+            },
+            {
+              "_type": "UMLGeneralizationView",
+              "_id": "_72E7F523A37D41BF",
+              "source": {
+                "$ref": "_DD3CDE54ABA741AC"
+              },
+              "target": {
+                "$ref": "_A79EE8F92D8F4E4F"
+              }
+            },
+            {
+              "_type": "UMLGeneralizationView",
+              "_id": "_4BDB39737E9B4CE3",
+              "source": {
+                "$ref": "_B66D5BF28129446C"
+              },
+              "target": {
+                "$ref": "_A79EE8F92D8F4E4F"
+              }
+            },
+            {
+              "_type": "UMLGeneralizationView",
+              "_id": "_9D8150F25D814612",
+              "source": {
+                "$ref": "_B5D55A6D01ED4951"
+              },
+              "target": {
+                "$ref": "_A79EE8F92D8F4E4F"
+              }
+            },
+            {
+              "_type": "UMLGeneralizationView",
+              "_id": "_DE3B75A38C654465",
+              "source": {
+                "$ref": "_FAC03868DA4E4126"
+              },
+              "target": {
+                "$ref": "_A79EE8F92D8F4E4F"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_26FE31C241A042B4",
+              "source": {
+                "$ref": "_7400E0201E1E44D7"
+              },
+              "target": {
+                "$ref": "_E4C8815351A44A96"
+              },
+              "name": "1 -- 1..*"
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_C81ED15FA59E40E8",
+              "source": {
+                "$ref": "_7400E0201E1E44D7"
+              },
+              "target": {
+                "$ref": "_DAD052EE522741F9"
+              },
+              "name": "1 -- 0..*"
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_B508736B2A144652",
+              "source": {
+                "$ref": "_7400E0201E1E44D7"
+              },
+              "target": {
+                "$ref": "_D02AC805732F45A1"
+              },
+              "name": "1 -- 0..1"
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_9F963CFE95F348E7",
+              "source": {
+                "$ref": "_D02AC805732F45A1"
+              },
+              "target": {
+                "$ref": "_14EC0E23DBBF49D4"
+              },
+              "name": "1 -- 1..*"
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_63CF23FACE6F4800",
+              "source": {
+                "$ref": "_D02AC805732F45A1"
+              },
+              "target": {
+                "$ref": "_B2F96C5B69C74F52"
+              },
+              "name": "1 -- 0..*"
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_2217AAB59B6744FF",
+              "source": {
+                "$ref": "_D02AC805732F45A1"
+              },
+              "target": {
+                "$ref": "_B18B908D103B49DF"
+              },
+              "name": "1 -- 0..*"
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_E2E994434AC04972",
+              "source": {
+                "$ref": "_D02AC805732F45A1"
+              },
+              "target": {
+                "$ref": "_88845BDC7CED411A"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_485641D6648B40FF",
+              "source": {
+                "$ref": "_A79EE8F92D8F4E4F"
+              },
+              "target": {
+                "$ref": "_A473353EB60F45AF"
+              },
+              "name": "1 -- 0..*"
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_E4DB9C7532BF4C2D",
+              "source": {
+                "$ref": "_4E4805CB43EF44AA"
+              },
+              "target": {
+                "$ref": "_7400E0201E1E44D7"
+              },
+              "name": "crée"
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "_87D8AA14809B4129",
+              "source": {
+                "$ref": "_DD3CDE54ABA741AC"
+              },
+              "target": {
+                "$ref": "_7400E0201E1E44D7"
+              },
+              "name": "encadre"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

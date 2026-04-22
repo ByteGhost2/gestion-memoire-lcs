@@ -1,0 +1,385 @@
+/* public/css/style.css */
+
+/* Animations personnalisées */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Effet de verre (glassmorphism) */
+.glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+}
+
+/* Pour les cartes */
+.card-hover {
+    transition: all 0.3s;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Dropdown notifications - positionné au-dessus de tout */
+#notifDropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 0.5rem;
+    z-index: 999999 !important;
+    min-width: 280px;
+    max-width: 350px;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+    pointer-events: auto;
+}
+
+.dark #notifDropdown {
+    background-color: #1f2937;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+}
+
+/* S'assurer que le bouton a un z-index élevé */
+#notifButton {
+    position: relative;
+    z-index: 100000;
+}
+
+/* Forcer les parents à ne pas cacher le dropdown */
+nav,
+nav .relative,
+nav .container,
+nav .flex,
+header .relative,
+main,
+footer {
+    overflow: visible !important;
+}
+
+/* Les éléments de notification doivent avoir un curseur pointer */
+.notification-item {
+    cursor: pointer;
+}
+
+/* Overlay pour les arrière-plans */
+.bg-overlay {
+    position: relative;
+    z-index: 1;
+}
+.bg-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* Dropdown notifications - plus utilisé car redirection directe, mais on garde pour d'éventuels usages */
+#notifDropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 0.5rem;
+    z-index: 9999 !important;
+    min-width: 280px;
+    max-width: 350px;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+}
+
+.dark #notifDropdown {
+    background-color: #1f2937;
+}
+
+#notifButton {
+    position: relative;
+    z-index: 10000;
+}
+
+.notification-item {
+    cursor: pointer;
+}
+
+/* Overlay pour arrière-plans */
+.bg-overlay {
+    position: relative;
+    z-index: 1;
+}
+.bg-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* Animations personnalisées */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Effet de verre pour les cartes */
+.glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.dark .glass {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+}
+
+/* Overlay pour les arrière-plans */
+.bg-overlay {
+    position: relative;
+    z-index: 1;
+}
+.bg-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* ==================== MODE SOMBRE - AMÉLIORATIONS ==================== */
+
+/* Tableaux en mode sombre */
+.dark table {
+    background-color: #1f2937;
+    color: #f3f4f6;
+}
+
+.dark table thead {
+    background-color: #374151;
+}
+
+.dark table th {
+    color: #e5e7eb;
+    border-bottom-color: #4b5563;
+}
+
+.dark table td {
+    border-bottom-color: #374151;
+    color: #d1d5db;
+}
+
+.dark table tr:hover {
+    background-color: #374151;
+}
+
+/* Cartes et conteneurs */
+.dark .bg-white {
+    background-color: #1f2937 !important;
+}
+
+.dark .bg-gray-50 {
+    background-color: #111827 !important;
+}
+
+.dark .bg-gray-100 {
+    background-color: #1f2937 !important;
+}
+
+.dark .border-gray-200 {
+    border-color: #374151 !important;
+}
+
+.dark .border-gray-300 {
+    border-color: #4b5563 !important;
+}
+
+.dark .shadow-lg, .dark .shadow-xl, .dark .shadow-md {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Textes */
+.dark .text-gray-500, .dark .text-gray-600, .dark .text-gray-700 {
+    color: #9ca3af !important;
+}
+
+.dark .text-gray-800, .dark .text-gray-900 {
+    color: #f3f4f6 !important;
+}
+
+/* Formulaires et inputs */
+.dark input, .dark select, .dark textarea {
+    background-color: #374151 !important;
+    border-color: #4b5563 !important;
+    color: #f3f4f6 !important;
+}
+
+.dark input:focus, .dark select:focus, .dark textarea:focus {
+    border-color: #3b82f6 !important;
+    outline: none;
+    ring: 2px solid #3b82f6;
+}
+
+.dark input::placeholder, .dark textarea::placeholder {
+    color: #6b7280 !important;
+}
+
+/* Boutons */
+.dark .bg-gray-200 {
+    background-color: #374151 !important;
+}
+
+.dark .hover\:bg-gray-100:hover {
+    background-color: #374151 !important;
+}
+
+.dark .hover\:bg-gray-50:hover {
+    background-color: #1f2937 !important;
+}
+
+/* Liens */
+.dark a.text-blue-600 {
+    color: #60a5fa !important;
+}
+
+.dark a.text-blue-600:hover {
+    color: #93c5fd !important;
+}
+
+.dark a.text-red-600 {
+    color: #f87171 !important;
+}
+
+.dark a.text-red-600:hover {
+    color: #fca5a5 !important;
+}
+
+/* Badges et statuts */
+.dark .bg-green-100 {
+    background-color: #064e3b !important;
+    color: #a7f3d0 !important;
+}
+
+.dark .bg-green-100.text-green-800 {
+    color: #a7f3d0 !important;
+}
+
+.dark .bg-yellow-100 {
+    background-color: #713f12 !important;
+    color: #fde047 !important;
+}
+
+.dark .bg-yellow-100.text-yellow-800 {
+    color: #fde047 !important;
+}
+
+.dark .bg-red-100 {
+    background-color: #7f1d1d !important;
+    color: #fca5a5 !important;
+}
+
+.dark .bg-red-100.text-red-800 {
+    color: #fca5a5 !important;
+}
+
+.dark .bg-blue-100 {
+    background-color: #1e3a8a !important;
+    color: #93c5fd !important;
+}
+
+.dark .bg-blue-100.text-blue-800 {
+    color: #93c5fd !important;
+}
+
+.dark .bg-gray-100 {
+    background-color: #374151 !important;
+    color: #e5e7eb !important;
+}
+
+.dark .bg-gray-100.text-gray-800 {
+    color: #e5e7eb !important;
+}
+
+/* Dropdowns et menus */
+.dark .bg-white {
+    background-color: #1f2937 !important;
+}
+
+.dark .divide-gray-200 > * {
+    border-color: #374151 !important;
+}
+
+/* Pagination et autres éléments */
+.dark .border {
+    border-color: #374151 !important;
+}
+
+.dark .shadow-sm {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3) !important;
+}

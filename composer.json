@@ -1,0 +1,7 @@
+{
+    "require": {
+        "robthree/twofactorauth": "^3.0",
+        "phpmailer/phpmailer": "^7.0",
+        "smalot/pdfparser": "^2.12"
+    }
+}
