@@ -22,7 +22,6 @@
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="role">Rôle</label>
             <select name="role" id="role" required class="shadow border rounded w-full py-2 px-3">
-                <option value="etudiant">Étudiant</option>
                 <option value="encadreur">Encadreur</option>
                 <option value="responsable">Responsable</option>
                 <option value="admin">Admin</option>

@@ -416,18 +416,50 @@ class AdminController {
         require_once 'views/admin/soutenances.php';
     }
 
-    public function planifierSoutenance() {
-        $this->checkAdminOrResponsable();
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $id_memoire = $_POST['id_memoire'];
-            $date = $_POST['date'];
-            $heure_debut = $_POST['heure_debut'];
-            $heure_fin = $_POST['heure_fin'];
-            $salle = $_POST['salle'];
+public function planifierSoutenance() {
+    $this->checkAdminOrResponsable();
+    $pdo = Db::getInstance();
 
-            $pdo = Db::getInstance();
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $id_memoire = $_POST['id_memoire'];
+        $date = $_POST['date'];
+        $heure_debut = $_POST['heure_debut'];
+        $heure_fin = $_POST['heure_fin'];
+        $salle = $_POST['salle'];
 
-            // Vérifier la disponibilité de la salle
+        // 1. Récupérer l'encadreur du mémoire
+        $stmtEnc = $pdo->prepare("SELECT id_encadreur FROM memoires WHERE id = ?");
+        $stmtEnc->execute([$id_memoire]);
+        $enc = $stmtEnc->fetch(PDO::FETCH_ASSOC);
+        $id_encadreur = $enc ? $enc['id_encadreur'] : null;
+
+        $error = null;
+
+        // 2. Vérifier la disponibilité de l'encadreur
+        if ($id_encadreur) {
+            // a) Encadreur déjà pris par une autre soutenance à la même heure ?
+            $stmt = $pdo->prepare("
+                SELECT s.id FROM soutenances s
+                JOIN memoires m ON s.id_memoire = m.id
+                WHERE m.id_encadreur = ? AND s.date = ? AND s.heure_debut < ? AND s.heure_fin > ?
+            ");
+            $stmt->execute([$id_encadreur, $date, $heure_fin, $heure_debut]);
+            if ($stmt->fetch()) {
+                $error = "L'encadreur est déjà affecté à une autre soutenance à cette date et heure.";
+            } else {
+                // b) Encadreur indisponible ?
+                $stmt = $pdo->prepare("
+                    SELECT id FROM disponibilites WHERE id_utilisateur = ? AND date = ? AND heure_debut <= ? AND heure_fin > ?
+                ");
+                $stmt->execute([$id_encadreur, $date, $heure_debut, $heure_debut]);
+                if ($stmt->fetch()) {
+                    $error = "L'encadreur a déclaré une indisponibilité pour ce créneau.";
+                }
+            }
+        }
+
+        // 3. Vérifier la disponibilité de la salle
+        if (!$error) {
             $stmt = $pdo->prepare("
                 SELECT id FROM soutenances 
                 WHERE salle = ? AND date = ? 
@@ -439,58 +471,66 @@ class AdminController {
             $stmt->execute([$salle, $date, $heure_debut, $heure_debut, $heure_fin, $heure_fin]);
             if ($stmt->fetch()) {
                 $error = "La salle est déjà occupée sur ce créneau";
-            } else {
-                $stmtIns = $pdo->prepare("INSERT INTO soutenances (id_memoire, date, heure_debut, heure_fin, salle) VALUES (?, ?, ?, ?, ?)");
-                if ($stmtIns->execute([$id_memoire, $date, $heure_debut, $heure_fin, $salle])) {
-                    $id_soutenance = $pdo->lastInsertId();
-                    $etudiant = $this->getEtudiantId($id_memoire);
-                    $encadreur = $this->getEncadreurId($id_memoire);
-                    if ($etudiant) {
-                        $this->notifier($etudiant, "Votre soutenance est planifiée le $date à $heure_debut", "/soutenance/planning");
-                        $stmt = $pdo->prepare("SELECT email, prenom, nom FROM utilisateurs WHERE id = ?");
-                        $stmt->execute([$etudiant]);
-                        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-                        if ($user) {
-                            $sujet = "Soutenance planifiée";
-                            $corps = "<p>Bonjour {$user['prenom']} {$user['nom']},</p>
-                                      <p>Votre soutenance est planifiée le " . date('d/m/Y', strtotime($date)) . " à {$heure_debut} en salle {$salle}.</p>
-                                      <p><a href='" . BASE_URL . "/soutenance/planning'>Voir le planning</a></p>";
-                            Mailer::send($user['email'], $sujet, $corps);
-                        }
-                    }
-                    if ($encadreur) {
-                        $this->notifier($encadreur, "Soutenance planifiée pour votre étudiant le $date", "/soutenance/planning");
-                        $stmt = $pdo->prepare("SELECT email, prenom, nom FROM utilisateurs WHERE id = ?");
-                        $stmt->execute([$encadreur]);
-                        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-                        if ($user) {
-                            $sujet = "Soutenance de votre étudiant planifiée";
-                            $corps = "<p>Bonjour {$user['prenom']} {$user['nom']},</p>
-                                      <p>La soutenance de votre étudiant est planifiée le " . date('d/m/Y', strtotime($date)) . " à {$heure_debut} en salle {$salle}.</p>
-                                      <p><a href='" . BASE_URL . "/soutenance/planning'>Voir le planning</a></p>";
-                            Mailer::send($user['email'], $sujet, $corps);
-                        }
-                    }
-                    $this->logAction("Planification soutenance", "Mémoire ID: $id_memoire, Date: $date");
-                    header('Location: ' . BASE_URL . '/admin/soutenances?planned=1');
-                    exit;
-                }
             }
         }
 
-        $pdo = Db::getInstance();
-        $memoires = $pdo->query("
-            SELECT m.id, m.titre, u.nom, u.prenom 
-            FROM memoires m 
-            JOIN utilisateurs u ON m.id_etudiant = u.id 
-            WHERE m.statut = 'valide' 
-            AND NOT EXISTS (SELECT 1 FROM soutenances s WHERE s.id_memoire = m.id)
-        ")->fetchAll(PDO::FETCH_ASSOC);
-
-        $salles = $pdo->query("SELECT nom FROM salles WHERE active = 1 ORDER BY nom")->fetchAll(PDO::FETCH_COLUMN);
-
-        require_once 'views/admin/planifier_soutenance.php';
+        // 4. Insertion si tout est ok
+        if (!$error) {
+            $stmtIns = $pdo->prepare("INSERT INTO soutenances (id_memoire, date, heure_debut, heure_fin, salle) VALUES (?, ?, ?, ?, ?)");
+            if ($stmtIns->execute([$id_memoire, $date, $heure_debut, $heure_fin, $salle])) {
+                $id_soutenance = $pdo->lastInsertId();
+                $etudiant = $this->getEtudiantId($id_memoire);
+                $encadreur = $this->getEncadreurId($id_memoire);
+                if ($etudiant) {
+                    $this->notifier($etudiant, "Votre soutenance est planifiée le $date à $heure_debut", "/soutenance/planning");
+                    // Email à l'étudiant
+                    $stmtUser = $pdo->prepare("SELECT email, prenom, nom FROM utilisateurs WHERE id = ?");
+                    $stmtUser->execute([$etudiant]);
+                    $user = $stmtUser->fetch(PDO::FETCH_ASSOC);
+                    if ($user) {
+                        $sujet = "Soutenance planifiée";
+                        $corps = "<p>Bonjour {$user['prenom']} {$user['nom']},</p>
+                                  <p>Votre soutenance est planifiée le " . date('d/m/Y', strtotime($date)) . " à {$heure_debut} en salle {$salle}.</p>
+                                  <p><a href='" . BASE_URL . "/soutenance/planning'>Voir le planning</a></p>";
+                        Mailer::send($user['email'], $sujet, $corps);
+                    }
+                }
+                if ($encadreur) {
+                    $this->notifier($encadreur, "Soutenance planifiée pour votre étudiant le $date", "/soutenance/planning");
+                    $stmtUser = $pdo->prepare("SELECT email, prenom, nom FROM utilisateurs WHERE id = ?");
+                    $stmtUser->execute([$encadreur]);
+                    $user = $stmtUser->fetch(PDO::FETCH_ASSOC);
+                    if ($user) {
+                        $sujet = "Soutenance de votre étudiant planifiée";
+                        $corps = "<p>Bonjour {$user['prenom']} {$user['nom']},</p>
+                                  <p>La soutenance de votre étudiant est planifiée le " . date('d/m/Y', strtotime($date)) . " à {$heure_debut} en salle {$salle}.</p>
+                                  <p><a href='" . BASE_URL . "/soutenance/planning'>Voir le planning</a></p>";
+                        Mailer::send($user['email'], $sujet, $corps);
+                    }
+                }
+                $this->logAction("Planification soutenance", "Mémoire ID: $id_memoire, Date: $date");
+                header('Location: ' . BASE_URL . '/admin/soutenances?planned=1');
+                exit;
+            } else {
+                $error = "Erreur lors de l'insertion de la soutenance.";
+            }
+        }
+        // En cas d'erreur, on garde $error pour l'affichage
     }
+
+    // Récupération des données pour le formulaire (mémoires validés sans soutenance, salles)
+    $memoires = $pdo->query("
+        SELECT m.id, m.titre, u.nom, u.prenom 
+        FROM memoires m 
+        JOIN utilisateurs u ON m.id_etudiant = u.id 
+        WHERE m.statut = 'valide' 
+        AND NOT EXISTS (SELECT 1 FROM soutenances s WHERE s.id_memoire = m.id)
+    ")->fetchAll(PDO::FETCH_ASSOC);
+
+    $salles = $pdo->query("SELECT nom FROM salles WHERE active = 1 ORDER BY nom")->fetchAll(PDO::FETCH_COLUMN);
+
+    require_once 'views/admin/planifier_soutenance.php';
+}
 
     public function proposerCreneaux($id_memoire) {
         $this->checkAdminOrResponsable();
@@ -561,56 +601,86 @@ class AdminController {
     }
 
     public function gererJury($id_soutenance) {
-        $this->checkAdminOrResponsable();
-        $pdo = Db::getInstance();
+    $this->checkAdminOrResponsable();
+    $pdo = Db::getInstance();
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $id_utilisateur = $_POST['id_utilisateur'] ?? 0;
-            $role = $_POST['role'] ?? '';
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $id_utilisateur = $_POST['id_utilisateur'] ?? 0;
+        $role = $_POST['role'] ?? '';
 
-            $stmtCheck = $pdo->prepare("SELECT id FROM jury WHERE id_soutenance = ? AND id_utilisateur = ?");
-            $stmtCheck->execute([$id_soutenance, $id_utilisateur]);
-            if ($stmtCheck->fetch()) {
-                $_SESSION['flash_error'] = "Ce membre est déjà dans le jury.";
-                header('Location: ' . BASE_URL . '/admin/gererJury/' . $id_soutenance);
-                exit;
-            }
+        // Récupérer la date et heure de la soutenance
+        $stmtSout = $pdo->prepare("SELECT date, heure_debut, heure_fin FROM soutenances WHERE id = ?");
+        $stmtSout->execute([$id_soutenance]);
+        $soutenance = $stmtSout->fetch(PDO::FETCH_ASSOC);
+        if (!$soutenance) die("Soutenance introuvable");
 
-            if ($role == 'president') {
-                $stmtPres = $pdo->prepare("SELECT id FROM jury WHERE id_soutenance = ? AND role = 'president'");
-                $stmtPres->execute([$id_soutenance]);
-                if ($stmtPres->fetch()) {
-                    $_SESSION['flash_error'] = "Un président est déjà affecté.";
-                    header('Location: ' . BASE_URL . '/admin/gererJury/' . $id_soutenance);
-                    exit;
-                }
-            }
-
-            $stmt = $pdo->prepare("INSERT INTO jury (id_soutenance, id_utilisateur, role) VALUES (?, ?, ?)");
-            if ($stmt->execute([$id_soutenance, $id_utilisateur, $role])) {
-                $this->notifier($id_utilisateur, "Vous avez été ajouté au jury de la soutenance #$id_soutenance", "/soutenance/planning");
-                $this->logAction("Ajout membre jury", "Soutenance ID: $id_soutenance, Utilisateur ID: $id_utilisateur");
-            }
-
-            $stmtUser = $pdo->prepare("SELECT email, prenom, nom FROM utilisateurs WHERE id = ?");
-            $stmtUser->execute([$id_utilisateur]);
-            $user = $stmtUser->fetch(PDO::FETCH_ASSOC);
-
-            $stmtSout = $pdo->prepare("SELECT date, heure_debut FROM soutenances WHERE id = ?");
-            $stmtSout->execute([$id_soutenance]);
-            $soutenance = $stmtSout->fetch(PDO::FETCH_ASSOC);
-
-            if ($user && $soutenance) {
-                $sujet = "Affectation au jury de soutenance";
-                $corps = "<p>Bonjour {$user['prenom']} {$user['nom']},</p>
-                          <p>Vous avez été ajouté en tant que <strong>{$role}</strong> pour la soutenance du " . date('d/m/Y', strtotime($soutenance['date'])) . " à " . substr($soutenance['heure_debut'],0,5) . ".</p>
-                          <p><a href='" . BASE_URL . "/soutenance/planning'>Voir le planning</a></p>";
-                Mailer::send($user['email'], $sujet, $corps);
-            }
-
+        // Vérifier si le membre est déjà dans le jury de cette soutenance
+        $stmtCheck = $pdo->prepare("SELECT id FROM jury WHERE id_soutenance = ? AND id_utilisateur = ?");
+        $stmtCheck->execute([$id_soutenance, $id_utilisateur]);
+        if ($stmtCheck->fetch()) {
+            $_SESSION['flash_error'] = "Ce membre est déjà dans le jury.";
             header('Location: ' . BASE_URL . '/admin/gererJury/' . $id_soutenance);
             exit;
         }
+
+        // Vérifier si le membre a déjà une autre soutenance à la même heure
+        $stmt = $pdo->prepare("
+            SELECT s.id FROM soutenances s
+            LEFT JOIN jury j ON s.id = j.id_soutenance
+            WHERE (j.id_utilisateur = ? OR s.id_memoire IN (SELECT id FROM memoires WHERE id_encadreur = ?))
+            AND s.date = ? AND s.heure_debut < ? AND s.heure_fin > ?
+        ");
+        $stmt->execute([$id_utilisateur, $id_utilisateur, $soutenance['date'], $soutenance['heure_fin'], $soutenance['heure_debut']]);
+        if ($stmt->fetch()) {
+            $_SESSION['flash_error'] = "Ce membre est déjà affecté à une autre soutenance à cette date et heure.";
+            header('Location: ' . BASE_URL . '/admin/gererJury/' . $id_soutenance);
+            exit;
+        }
+
+        // Vérifier ses indisponibilités
+        $stmt = $pdo->prepare("
+            SELECT id FROM disponibilites WHERE id_utilisateur = ? AND date = ? AND heure_debut <= ? AND heure_fin > ?
+        ");
+        $stmt->execute([$id_utilisateur, $soutenance['date'], $soutenance['heure_debut'], $soutenance['heure_debut']]);
+        if ($stmt->fetch()) {
+            $_SESSION['flash_error'] = "Ce membre a déclaré une indisponibilité pour ce créneau.";
+            header('Location: ' . BASE_URL . '/admin/gererJury/' . $id_soutenance);
+            exit;
+        }
+
+        // Empêcher deux présidents
+        if ($role == 'president') {
+            $stmtPres = $pdo->prepare("SELECT id FROM jury WHERE id_soutenance = ? AND role = 'president'");
+            $stmtPres->execute([$id_soutenance]);
+            if ($stmtPres->fetch()) {
+                $_SESSION['flash_error'] = "Un président est déjà affecté.";
+                header('Location: ' . BASE_URL . '/admin/gererJury/' . $id_soutenance);
+                exit;
+            }
+        }
+
+        // Insertion
+        $stmt = $pdo->prepare("INSERT INTO jury (id_soutenance, id_utilisateur, role) VALUES (?, ?, ?)");
+        if ($stmt->execute([$id_soutenance, $id_utilisateur, $role])) {
+            $this->notifier($id_utilisateur, "Vous avez été ajouté au jury de la soutenance #$id_soutenance", "/soutenance/planning");
+            $this->logAction("Ajout membre jury", "Soutenance ID: $id_soutenance, Utilisateur ID: $id_utilisateur");
+        }
+
+        // Envoyer email
+        $stmtUser = $pdo->prepare("SELECT email, prenom, nom FROM utilisateurs WHERE id = ?");
+        $stmtUser->execute([$id_utilisateur]);
+        $user = $stmtUser->fetch(PDO::FETCH_ASSOC);
+        if ($user && $soutenance) {
+            $sujet = "Affectation au jury de soutenance";
+            $corps = "<p>Bonjour {$user['prenom']} {$user['nom']},</p>
+                      <p>Vous avez été ajouté en tant que <strong>{$role}</strong> pour la soutenance du " . date('d/m/Y', strtotime($soutenance['date'])) . " à " . substr($soutenance['heure_debut'],0,5) . ".</p>
+                      <p><a href='" . BASE_URL . "/soutenance/planning'>Voir le planning</a></p>";
+            Mailer::send($user['email'], $sujet, $corps);
+        }
+
+        header('Location: ' . BASE_URL . '/admin/gererJury/' . $id_soutenance);
+        exit;
+    }
 
         $stmt = $pdo->prepare("
             SELECT s.*, m.titre, u.nom, u.prenom 
@@ -828,7 +898,7 @@ class AdminController {
         $settings = [
             'nom_etablissement' => 'Institut Universitaire Les COURS SONOU',
             'email_contact' => 'contact@iucs.bj',
-            'telephone' => '+229 01 23 45 67',
+            'telephone' => '+229 01 60 20 41 41',
             'adresse' => 'Cotonou, Bénin',
             'site_web' => 'https://iucs.bj',
             'facebook' => '',

@@ -10,10 +10,7 @@
             <h2 class="text-xl font-bold mb-4">Mémoires par statut</h2>
             <canvas id="chartStatuts"></canvas>
         </div>
-        <div class="bg-white rounded-lg shadow-xl p-6 md:col-span-2">
-            <h2 class="text-xl font-bold mb-4">Évolution des dépôts</h2>
-            <canvas id="chartMois"></canvas>
-        </div>
+    
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

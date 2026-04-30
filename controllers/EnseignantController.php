@@ -289,48 +289,75 @@ class EnseignantController {
     }
 
     public function finaliserSoutenance($id_soutenance) {
-        $this->checkEnseignant();
-        $pdo = Db::getInstance();
-        $id_user = $_SESSION['user']['id'];
+    $this->checkEnseignant();
+    $pdo = Db::getInstance();
+    $id_user = $_SESSION['user']['id'];
 
-        $stmt = $pdo->prepare("SELECT id_soutenance FROM jury WHERE id_soutenance = ? AND id_utilisateur = ? AND role = 'president'");
-        $stmt->execute([$id_soutenance, $id_user]);
-        if (!$stmt->fetch()) {
-            die("Seul le président du jury peut finaliser la soutenance.");
-        }
-
-        $stmt = $pdo->prepare("
-            SELECT COUNT(*) as total, 
-                   (SELECT COUNT(*) FROM evaluations WHERE id_soutenance = ?) as eval_count
-            FROM jury 
-            WHERE id_soutenance = ?
-        ");
-        $stmt->execute([$id_soutenance, $id_soutenance]);
-        $jury = $stmt->fetch(PDO::FETCH_ASSOC);
-        if ($jury['eval_count'] < $jury['total']) {
-            die("Tous les membres du jury n'ont pas encore évalué.");
-        }
-
-        $stmt = $pdo->prepare("SELECT id_memoire FROM soutenances WHERE id = ?");
-        $stmt->execute([$id_soutenance]);
-        $soutenance = $stmt->fetch(PDO::FETCH_ASSOC);
-        if (!$soutenance) die("Soutenance introuvable");
-
-        $pdo->prepare("UPDATE memoires SET statut = 'soutenu' WHERE id = ?")->execute([$soutenance['id_memoire']]);
-
-        $this->notifierResponsable("Le mémoire #{$soutenance['id_memoire']} a été soutenu et est en attente d'attestation.", "/admin/voirMemoire/{$soutenance['id_memoire']}");
-        $this->notifierAdmins("Le mémoire #{$soutenance['id_memoire']} a été soutenu. Veuillez téléverser l'attestation.", "/admin/voirMemoire/{$soutenance['id_memoire']}");
-
-        $admins = $pdo->query("SELECT email, prenom, nom FROM utilisateurs WHERE role = 'admin'")->fetchAll();
-        foreach ($admins as $admin) {
-            $sujet = "Mémoire soutenu - Attestation à téléverser";
-            $corps = "<p>Bonjour {$admin['prenom']} {$admin['nom']},</p>
-                      <p>Le mémoire #{$soutenance['id_memoire']} a été soutenu. Veuillez téléverser l'attestation.</p>
-                      <p><a href='" . BASE_URL . "/admin/voirMemoire/{$soutenance['id_memoire']}'>Voir le mémoire</a></p>";
-            Mailer::send($admin['email'], $sujet, $corps);
-        }
-
-        header('Location: ' . BASE_URL . '/enseignant/dashboard?finalise=1');
-        exit;
+    // Vérifier que l'utilisateur est le président du jury
+    $stmt = $pdo->prepare("SELECT id_soutenance FROM jury WHERE id_soutenance = ? AND id_utilisateur = ? AND role = 'president'");
+    $stmt->execute([$id_soutenance, $id_user]);
+    if (!$stmt->fetch()) {
+        die("Seul le président du jury peut finaliser la soutenance.");
     }
+
+    // Vérifier que tous les membres du jury ont évalué
+    $stmt = $pdo->prepare("
+        SELECT COUNT(*) as total, 
+               (SELECT COUNT(*) FROM evaluations WHERE id_soutenance = ?) as eval_count
+        FROM jury 
+        WHERE id_soutenance = ?
+    ");
+    $stmt->execute([$id_soutenance, $id_soutenance]);
+    $jury = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($jury['eval_count'] < $jury['total']) {
+        die("Tous les membres du jury n'ont pas encore évalué.");
+    }
+
+    // Vérifier la composition du jury (au moins un président, un examinateur, un rapporteur)
+    $stmtRoles = $pdo->prepare("
+        SELECT role, COUNT(*) as nb
+        FROM jury
+        WHERE id_soutenance = ?
+        GROUP BY role
+    ");
+    $stmtRoles->execute([$id_soutenance]);
+    $roles = $stmtRoles->fetchAll(PDO::FETCH_ASSOC);
+    $hasPresident = false;
+    $hasExaminateur = false;
+    $hasRapporteur = false;
+    foreach ($roles as $r) {
+        if ($r['role'] == 'president') $hasPresident = true;
+        if ($r['role'] == 'examinateur') $hasExaminateur = true;
+        if ($r['role'] == 'rapporteur') $hasRapporteur = true;
+    }
+    if (!$hasPresident || !$hasExaminateur || !$hasRapporteur) {
+        die("Le jury doit être composé d'au moins un président, un examinateur et un rapporteur pour finaliser la soutenance.");
+    }
+
+    // Récupérer le mémoire associé
+    $stmt = $pdo->prepare("SELECT id_memoire FROM soutenances WHERE id = ?");
+    $stmt->execute([$id_soutenance]);
+    $soutenance = $stmt->fetch(PDO::FETCH_ASSOC);
+    if (!$soutenance) die("Soutenance introuvable");
+
+    // Mettre à jour le statut du mémoire
+    $pdo->prepare("UPDATE memoires SET statut = 'soutenu' WHERE id = ?")->execute([$soutenance['id_memoire']]);
+
+    // Notifications
+    $this->notifierResponsable("Le mémoire #{$soutenance['id_memoire']} a été soutenu et est en attente d'attestation.", "/admin/voirMemoire/{$soutenance['id_memoire']}");
+    $this->notifierAdmins("Le mémoire #{$soutenance['id_memoire']} a été soutenu. Veuillez téléverser l'attestation.", "/admin/voirMemoire/{$soutenance['id_memoire']}");
+
+    // Email aux administrateurs
+    $admins = $pdo->query("SELECT email, prenom, nom FROM utilisateurs WHERE role = 'admin'")->fetchAll();
+    foreach ($admins as $admin) {
+        $sujet = "Mémoire soutenu - Attestation à téléverser";
+        $corps = "<p>Bonjour {$admin['prenom']} {$admin['nom']},</p>
+                  <p>Le mémoire #{$soutenance['id_memoire']} a été soutenu. Veuillez téléverser l'attestation.</p>
+                  <p><a href='" . BASE_URL . "/admin/voirMemoire/{$soutenance['id_memoire']}'>Voir le mémoire</a></p>";
+        Mailer::send($admin['email'], $sujet, $corps);
+    }
+
+    header('Location: ' . BASE_URL . '/enseignant/dashboard?finalise=1');
+    exit;
+ }
 }

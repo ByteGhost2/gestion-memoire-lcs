@@ -42,6 +42,7 @@
                 <select name="role" id="role" required class="shadow border rounded w-full py-2 px-3">
                     <option value="president">Président</option>
                     <option value="examinateur">Examinateur</option>
+                    <option value="rapporteur">Rapporteur</option>
                 </select>
             </div>
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Ajouter</button>
